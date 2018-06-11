@@ -9,7 +9,6 @@ app.get('/', function(req, res) {
   res.json(test)
 });
 
-
 app.listen(PORT, function() {
 	console.log(`listening on port ${PORT}`);
 });
