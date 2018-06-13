@@ -5,7 +5,7 @@ const cors = require('cors');
 const pgp = require('pg-promise')();
 const connection = {
     database: 'ping_pong',
-    user: 'ajshopov'
+    user: 'James'
 };
 const db = pgp(connection);
 app.use(cors());
@@ -20,7 +20,6 @@ app.get('/', function(req, res) {
   }
   res.json(test)
 });
-
 
 app.get('/api/players', (req, res) => {
   db.any('SELECT * FROM players')
