@@ -23,14 +23,22 @@ app.get('/', function(req, res) {
 
 app.get('/api/players', (req, res) => {
   db.any('SELECT * FROM players')
-    .then(data => {
-      console.log(data); // print data;
-      res.json(data)
-    }).catch(error => {
-      console.log('ERROR:', error); // print the error;
-    })
-})
+  .then(data => {
+    console.log(data); // print data;
+    res.json(data)
+  }).catch(error => {
+    console.log('ERROR:', error); // print the error;
+  })
+});
 
+app.get('/api/matches', (req, res) => {
+  db.any('SELECT * FROM matches')
+  .then(data => {
+    res.json(data)
+  }).catch(error => {
+    console.log('ERROR:', error)
+  })
+});
 
 app.post('/api/players', (req, res) => {
   console.log(req.body)
