@@ -3,9 +3,10 @@ const app = express();
 const PORT = 5000;
 const cors = require('cors');
 const pgp = require('pg-promise')();
+const PSQL_USER = process.env.PSQL_USER;
 const connection = {
     database: 'ping_pong',
-    user: 'James'
+    user: PSQL_USER
 };
 const db = pgp(connection);
 app.use(cors());
